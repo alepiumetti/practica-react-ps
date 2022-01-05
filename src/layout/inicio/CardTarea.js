@@ -4,7 +4,7 @@ const CardTarea = (props) => {
 	const { card } = props;
 
 	return (
-		<Card>
+		<Card style={{ margin: '5px' }}>
 			<Card.Header>{card.nombre}</Card.Header>
 			<Card.Body>
 				<p>{card.descripcion}</p>
