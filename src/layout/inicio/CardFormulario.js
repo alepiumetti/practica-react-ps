@@ -4,18 +4,54 @@ import { useState } from 'react';
 const CardFormulario = (props) => {
 	const { setCard, card } = props;
 
-	const [valoresCards, setValoresCards] = useState({});
+	const [valoresCards, setValoresCards] = useState({}); //objeto
 
 	const handlerInputText = (event) => {
 		let value = event.target.value;
 
-		setValoresCards({ ...valoresCards, [event.target.name]: value });
+		if (event.target.name === 'nombre') {
+			setValoresCards({ ...valoresCards, nombre: value });
+
+			/*
+				valoresCards = {
+					nombre:"valor"
+				}
+			*/
+		}
+
+		if (event.target.name === 'descripcion') {
+			setValoresCards({ ...valoresCards, descripcion: value });
+
+			/*
+				valoresCards = {
+					descripcion:"valor"
+				}
+			*/
+		}
+
+		/**
+		 * valoresCards={
+		 * id:"1"
+		 * nombre:"valor",
+		 * descripcion:"valor"
+		 * }
+		 *
+		 */
+
+		// setValoresCards({ ...valoresCards, [event.target.name]: value });
 	};
 
 	const handlerButtonSubmit = (event) => {
 		event.preventDefault();
 
-		console.log(valoresCards.nombre);
+		/**
+		 * valoresCards={
+		 * id:1,
+		 * nombre:"valor",
+		 * descripcion:"valor"
+		 * }
+		 *
+		 */
 
 		if (!valoresCards.nombre) {
 			return alert('Debes ingresar un valor');
@@ -26,6 +62,10 @@ const CardFormulario = (props) => {
 		}
 
 		setCard([...card, valoresCards]);
+
+		/**
+		 * card=[valoresCards,valoresCards,valoresCards,valoresCards,]
+		 */
 	};
 
 	return (
