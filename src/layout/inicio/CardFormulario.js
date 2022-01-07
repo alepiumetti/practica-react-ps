@@ -68,6 +68,18 @@ const CardFormulario = (props) => {
 		 */
 	};
 
+	//Aca deberia ir el boton eliminar?
+	
+	
+
+    //No se si la parte de boton esta bien, creo que esta correcta la parte de la funcion delete task
+
+const deleteTask = (id) => {
+    const filteredTasks =  tasks.filter(task => task.id !== id)
+    setTasks(filteredTasks)
+}
+	
+	
 	return (
 		<Card>
 			<Card.Header as='h5'>Crear tarea</Card.Header>
