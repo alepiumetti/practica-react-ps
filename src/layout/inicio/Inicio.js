@@ -15,7 +15,7 @@ const Inicio = () => {
 				<Col style={{ height: '100vh' }}>
 					{cards.map((card, index) => (
 						<div key={index}>
-							<CardTarea card={card} />
+							<CardTarea totalCards={cards} setTotalCards={setCards} card={card} />
 						</div>
 					))}
 				</Col>
